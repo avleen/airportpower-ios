@@ -10,12 +10,20 @@
 
 #import "ViewController.h"
 
+#import <GoogleMaps/GoogleMaps.h>
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    [GMSServices provideAPIKey:@"AIzaSyCG_v4KZJEH_qB8BaErEu70gAwEMys0fVw"];
+    [self generateUUID];
+
+    // Initialise the data store
+    [MagicalRecord setupCoreDataStack];
+
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
     } else {
@@ -24,6 +32,21 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(NSString *)generateUUID
+{
+    NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"com.silverwraith.Airport-Power.uuid"];
+    if (!UUID)
+    {
+        CFUUIDRef theUUID = CFUUIDCreate(NULL);
+        CFStringRef string = CFUUIDCreateString(NULL, theUUID);
+        CFRelease(theUUID);
+        UUID = [(__bridge NSString*)string stringByReplacingOccurrencesOfString:@"-" withString:@""];
+        [[NSUserDefaults standardUserDefaults] setValue:UUID forKey:@"com.silverwraith.Airport-Power.uuid"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    return UUID;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

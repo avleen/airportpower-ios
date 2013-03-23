@@ -8,6 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import <GoogleMaps/GoogleMaps.h>
+#import "GADBannerView.h"
+
+@interface ViewController : UIViewController <UIAlertViewDelegate, UIActionSheetDelegate, GMSMapViewDelegate> {
+    IBOutlet UIToolbar *toolbar;
+    IBOutlet GMSMapView *mapView;
+    GADBannerView *bannerView_;
+}
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *currentLocation;
+@property (strong, nonatomic) NSString *selectedMarker;
+@property (strong, nonatomic) IBOutlet GMSMapView *mapView;
+@property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *submitButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *myLocationButton;
+
+
+- (void)makePopup:(NSString *)message;
+- (IBAction)showActionSheet:(id)sender;
+- (IBAction)zoomToMyLocation:(id)sender;
 
 @end
