@@ -49,7 +49,7 @@
     // Turn on location stuff
     locationManager = [[CLLocationManager alloc] init];
     [locationManager startUpdatingLocation];
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:0.0
                                                             longitude:0.0
                                                                  zoom:3];
