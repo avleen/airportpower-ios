@@ -11,10 +11,11 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "GADBannerView.h"
 
-@interface ViewController : UIViewController <UIAlertViewDelegate, UIActionSheetDelegate, GMSMapViewDelegate> {
+@interface ViewController : UIViewController <UIAlertViewDelegate, UIActionSheetDelegate, GMSMapViewDelegate, CLLocationManagerDelegate> {
     IBOutlet UIToolbar *toolbar;
     IBOutlet GMSMapView *mapView;
     GADBannerView *bannerView_;
+    CLLocationManager *locationManager;
 }
 
 @property (strong, nonatomic) CLLocationManager *locationManager;

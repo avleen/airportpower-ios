@@ -48,8 +48,16 @@
     
     // Turn on location stuff
     locationManager = [[CLLocationManager alloc] init];
+    [locationManager setDelegate:self];
     [locationManager startUpdatingLocation];
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    
+    // Ads stuff, loaded last.
+    bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+    bannerView_.adUnitID = @"a1514566d702e35";
+    bannerView_.rootViewController = self;
+    [self.view addSubview:bannerView_];
+
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:0.0
                                                             longitude:0.0
                                                                  zoom:3];
@@ -59,12 +67,9 @@
     mapView_.delegate = self;
     [self.mapView addSubview: mapView_];
     [self GetAndDownloadMarkers];
+    // Jump to the last known location, so that we don't just *sit* there.
+    [self zoomToMyLocationWarn];
     
-    // Ads stuff, loaded last.
-    bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-    bannerView_.adUnitID = @"a1514566d702e35";
-    bannerView_.rootViewController = self;
-    [self.view addSubview:bannerView_];
     [bannerView_ loadRequest:[GADRequest request]];
 }
 
@@ -227,6 +232,18 @@
                                                           zoom:13]];
 }
 - (IBAction) zoomToMyLocation:(id)sender {
+    // Default to Central Park, NY
+    float lat = (currentLocation != nil) ? currentLocation.coordinate.latitude : 40.774875;
+    float lng = (currentLocation != nil) ? currentLocation.coordinate.longitude : -73.970682;
+    if (currentLocation == nil) {
+        [self makePopup:@"Waiting for GPS location. We'll jump to your location as soon as we get it. In the mean time, here's Central Park."];
+    }
+    [ mapView_ setCamera:[GMSCameraPosition cameraWithLatitude:lat
+                                                     longitude:lng
+                                                          zoom:13]];
+}
+
+- (void) zoomToMyLocationWarn {
     // Default to Central Park, NY
     float lat = (currentLocation != nil) ? currentLocation.coordinate.latitude : 40.774875;
     float lng = (currentLocation != nil) ? currentLocation.coordinate.longitude : -73.970682;
