@@ -12,6 +12,7 @@
 
 @interface KVStore : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * welcomeSeen;
+@property (nonatomic, retain) NSNumber *welcomeSeen;
+@property (nonatomic, retain) NSString *lastCameraPosition;
 
 @end

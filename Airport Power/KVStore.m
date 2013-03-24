@@ -12,5 +12,6 @@
 @implementation KVStore
 
 @dynamic welcomeSeen;
+@dynamic lastCameraPosition;
 
 @end

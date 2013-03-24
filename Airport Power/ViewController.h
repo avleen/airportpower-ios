@@ -14,8 +14,7 @@
 @interface ViewController : UIViewController <UIAlertViewDelegate, UIActionSheetDelegate, GMSMapViewDelegate, CLLocationManagerDelegate> {
     IBOutlet UIToolbar *toolbar;
     IBOutlet GMSMapView *mapView;
-    GADBannerView *bannerView_;
-    CLLocationManager *locationManager;
+    IBOutlet GADBannerView *bannerView;
 }
 
 @property (strong, nonatomic) CLLocationManager *locationManager;

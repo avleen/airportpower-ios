@@ -1,0 +1,46 @@
+/* 
+  Localizable.strings
+  Airport Power
+
+  Created by Baron Chandler on 3/23/13.
+  Copyright (c) 2013 WraithNet. All rights reserved.
+*/
+
+"cancel" = "Cancel";
+"ok" = "Ok!";
+
+
+"app_name" = "Airport Power";
+
+
+"still_waiting_gps" = "Waiting for GPS location. We'll jump to your location as soon as we get it. In the meantime, here's Central Park.";
+"waiting_gps" = "Waiting for GPS location.";
+"welcome_message" = "Airport Power is a crowdsourced app!
+
+You'll notice that currently we don't list every power outlet.
+This app needs YOU to make it a success!
+
+When you're at an airport and see a power outlet, simply press the
+menu key, followed by the Submit Power Location button.
+
+You'll help other people find power, and their submissions will help you in return!
+
+Tap \"Tweet This\" to let others know about this app!";
+
+
+"still_here" = "Is this power location still here?";
+"power_gone" = "Nope, it's gone.";
+"power_still_here" = "Yes, still here!";
+
+
+"thanks_vote" = "Thank you! Your vote has been counted.";
+"thanks_accuracy" = "Thank you! Your GPS accuracy is currently %0.f meters. Your submission will be published shortly.";
+"thanks" = "Thank you! Your submission will be published shortly.";
+
+
+"submit_title" = "Really submit a new power outlet at your location?";
+"submit_yes" = "Yes! There's power here!";
+"submit_no" = "No, no power here";
+
+
+"error_gps" = "Error retrieving location";
