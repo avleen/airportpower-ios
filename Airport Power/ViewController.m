@@ -11,7 +11,7 @@
 #import "ViewController.h"
 
 #import <BugSense-iOS/BugSenseController.h>
-
+#import "Reachability.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "KVStore.h"
 
@@ -48,7 +48,15 @@ const NSString *actionUpdate = @"update";
 const NSString *actionNewLocation = @"newLocation";
 
 -(void)viewDidLoad {
-    
+
+    // Allow oureslves to pick up cool notifications about broken
+    // network stuff.
+    //
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reachabilityChanged:)
+                                                 name:kReachabilityChangedNotification
+                                               object:nil];
+
     // Set up our KVStore if needed
     //
     NSUInteger count = [KVStore countOfEntities];
@@ -107,6 +115,24 @@ const NSString *actionNewLocation = @"newLocation";
     [[NSManagedObjectContext defaultContext] MR_saveOnlySelfAndWait];
 }
 
+- (void)reachabilityChanged:(NSNotification *)notification {
+    
+    static BOOL reachable = NO;
+    
+    Reachability *reach = [notification object];
+
+    BOOL new_reachable = [reach isReachable];
+    if ((reachable == YES) && (new_reachable == NO)) {
+        [self makePopup:NSLocalizedString(@"error_noconnection", nil)];
+    }
+    
+    [self.submitButton setEnabled:new_reachable];
+    
+    reachable = new_reachable;
+    
+    NSLog(@"reachability changed. %@", [reach currentReachabilityString]);
+}
+
 - (GMSCameraPosition *)lastKnownCameraPosition {
 
     CGFloat lat, lon, zoom;
@@ -128,7 +154,6 @@ const NSString *actionNewLocation = @"newLocation";
                                        longitude:lon
                                             zoom:zoom];
 }
-
 
 - (void)saveCameraPosition {
     GMSCameraPosition *camera = [mapView camera];
@@ -301,13 +326,6 @@ const NSString *actionNewLocation = @"newLocation";
            fromLocation:(CLLocation *)oldLocation {
     NSLog(@"Location changed");
     self.currentLocation = newLocation;
-    
-    // Replaced this in lieu of saved position
-    //
-    //    if (zoomedOnce != 1) {
-    //        zoomedOnce = 1;
-    //        [self zoomToMyLocation:self];
-    //    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {

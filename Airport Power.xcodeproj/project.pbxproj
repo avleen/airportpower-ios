@@ -74,6 +74,7 @@
 		AA272BF016FECDFE0095B53F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272BEF16FECDFE0095B53F /* Default@2x.png */; };
 		AA272BF2170139010095B53F /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA272BF1170139010095B53F /* BugSense-iOS.framework */; };
 		AA272BF617013DAE0095B53F /* AirportPower.m in Sources */ = {isa = PBXBuildFile; fileRef = AA272BF517013DAE0095B53F /* AirportPower.m */; };
+		AA272BFA17014B840095B53F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AA272BF917014B840095B53F /* Reachability.m */; };
 		AA2F848816FD71A500CE62D6 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2F848616FD71A500CE62D6 /* 74-location.png */; };
 		AA2F848916FD71A500CE62D6 /* 74-location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2F848716FD71A500CE62D6 /* 74-location@2x.png */; };
 		AA2F848C16FD734200CE62D6 /* 51-outlet.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2F848A16FD734200CE62D6 /* 51-outlet.png */; };
@@ -193,6 +194,8 @@
 		AA272BF1170139010095B53F /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "BugSense-iOS.framework"; sourceTree = "<group>"; };
 		AA272BF417013BF60095B53F /* AirportPower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirportPower.h; sourceTree = "<group>"; };
 		AA272BF517013DAE0095B53F /* AirportPower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirportPower.m; sourceTree = "<group>"; };
+		AA272BF817014B840095B53F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		AA272BF917014B840095B53F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		AA2F848616FD71A500CE62D6 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
 		AA2F848716FD71A500CE62D6 /* 74-location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location@2x.png"; sourceTree = "<group>"; };
 		AA2F848A16FD734200CE62D6 /* 51-outlet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "51-outlet.png"; sourceTree = "<group>"; };
@@ -339,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				81C6280516FD1A9E0023260F /* MagicalRecord */,
+				AA272BF717014B840095B53F /* Reachability */,
 				81C6280016FD10460023260F /* AdSupport.framework */,
 				81C627FE16FD10370023260F /* MessageUI.framework */,
 				81C627FC16FD102E0023260F /* StoreKit.framework */,
@@ -434,6 +438,15 @@
 				81D21F7F16FAD2E70090A652 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA272BF717014B840095B53F /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				AA272BF817014B840095B53F /* Reachability.h */,
+				AA272BF917014B840095B53F /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,6 +559,7 @@
 				81C6285A16FD1A9E0023260F /* MagicalRecord.m in Sources */,
 				81C6285D16FD1BB40023260F /* KVStore.m in Sources */,
 				AA272BF617013DAE0095B53F /* AirportPower.m in Sources */,
+				AA272BFA17014B840095B53F /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

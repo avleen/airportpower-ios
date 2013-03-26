@@ -44,3 +44,6 @@ Tap \"Tweet This\" to let others know about this app!";
 
 
 "error_gps" = "Error retrieving location";
+"error_noconnection" = "Our servers are currently unreachable. Until we can
+contact them, we will be unable to show you where the power is. Be sure
+that your network is connected and you're no longer in Airplane Mode.";

@@ -6,16 +6,19 @@
 //  Copyright (c) 2013 WraithNet. All rights reserved.
 //
 
-#import <BugSense-iOS/BugSenseController.h>
 
 #import "AppDelegate.h"
 #import "AirportPower.h"
-
 #import "ViewController.h"
 
+#import <BugSense-iOS/BugSenseController.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import "Reachability.h"
 
 @implementation AppDelegate
+
+static BOOL appserverReachable = NO;
+Reachability *reach = nil;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -28,6 +31,13 @@
 
     // Initialise the data store
     [MagicalRecord setupCoreDataStack];
+    
+    // Initialise the reachability lib
+    reach = [Reachability reachabilityWithHostname:@"airportpower.silverwraith.com"];
+    
+    // start the notifier which will cause the reachability object to retain itself!
+    [reach startNotifier];
+
 
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
@@ -80,6 +90,7 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     [MagicalRecord cleanUp];
+    [reach stopNotifier];
 }
 
 @end
