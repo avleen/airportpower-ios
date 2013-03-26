@@ -6,7 +6,11 @@
 //  Copyright (c) 2013 WraithNet. All rights reserved.
 //
 
+#import "AirportPower.h"
+
 #import "ViewController.h"
+
+#import <BugSense-iOS/BugSenseController.h>
 
 #import <GoogleMaps/GoogleMaps.h>
 #import "KVStore.h"
@@ -61,7 +65,8 @@ const NSString *actionNewLocation = @"newLocation";
     
     [bannerView setAdSize:kGADAdSizeBanner];
     [bannerView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    bannerView.adUnitID = @"a1514566d702e35";
+
+    bannerView.adUnitID = GOOGLE_AD_UNITID;
     bannerView.rootViewController = self;
     
     GMSCameraPosition *camera = self.lastKnownCameraPosition;
@@ -82,7 +87,12 @@ const NSString *actionNewLocation = @"newLocation";
     [locationManager startUpdatingLocation];
     locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
 
-    [bannerView loadRequest:[GADRequest request]];
+    GADRequest *testRequest = [GADRequest request];
+    
+    //FIXME: Remove test for ad
+    
+    testRequest.testDevices = [NSArray arrayWithObjects: GAD_SIMULATOR_ID, nil];
+    [bannerView loadRequest:testRequest];
 }
 
 - (void)welcomeMessage {

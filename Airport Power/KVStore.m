@@ -8,6 +8,7 @@
 
 #import "KVStore.h"
 
+#import <BugSense-iOS/BugSenseController.h>
 
 @implementation KVStore
 

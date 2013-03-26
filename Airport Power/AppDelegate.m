@@ -6,7 +6,10 @@
 //  Copyright (c) 2013 WraithNet. All rights reserved.
 //
 
+#import <BugSense-iOS/BugSenseController.h>
+
 #import "AppDelegate.h"
+#import "AirportPower.h"
 
 #import "ViewController.h"
 
@@ -18,7 +21,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    [GMSServices provideAPIKey:@"AIzaSyCG_v4KZJEH_qB8BaErEu70gAwEMys0fVw"];
+    [GMSServices provideAPIKey:GOOGLE_API_KEY];
+    [BugSenseController sharedControllerWithBugSenseAPIKey:BUGSENSE_API_KEY];
+
     [self generateUUID];
 
     // Initialise the data store
