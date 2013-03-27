@@ -94,12 +94,9 @@ const NSString *actionNewLocation = @"newLocation";
     [locationManager startUpdatingLocation];
     locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
 
-    GADRequest *testRequest = [GADRequest request];
-    
-    //FIXME: Remove test for ad
-    
-    testRequest.testDevices = [NSArray arrayWithObjects: GAD_SIMULATOR_ID, nil];
-    [bannerView loadRequest:testRequest];
+    GADRequest *adRequest = [GADRequest request];
+    adRequest.testDevices = [NSArray arrayWithObjects: GAD_SIMULATOR_ID, nil];
+    [bannerView loadRequest:adRequest];
 }
 
 - (void)welcomeMessage {

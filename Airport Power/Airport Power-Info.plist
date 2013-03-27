@@ -16,6 +16,10 @@
 			<array>
 				<string>airportpowericon@2x.png</string>
 				<string>airportpowericon.png</string>
+				<string>airportpowericon_iPhone@2x.png</string>
+				<string>airportpowericon_iPhone.png</string>
+				<string>airportpowericon_iPad.png</string>
+				<string>airportpowericon_iPad@2x.png</string>
 			</array>
 		</dict>
 	</dict>

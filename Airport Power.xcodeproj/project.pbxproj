@@ -47,7 +47,6 @@
 		81D21F7416FAD2E70090A652 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81D21F7216FAD2E70090A652 /* InfoPlist.strings */; };
 		81D21F7616FAD2E70090A652 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D21F7516FAD2E70090A652 /* main.m */; };
 		81D21F7A16FAD2E70090A652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D21F7916FAD2E70090A652 /* AppDelegate.m */; };
-		81D21F8016FAD2E70090A652 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81D21F7F16FAD2E70090A652 /* Default-568h@2x.png */; };
 		81D21F8316FAD2E70090A652 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D21F8216FAD2E70090A652 /* ViewController.m */; };
 		81D21F8616FAD2E70090A652 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81D21F8416FAD2E70090A652 /* ViewController_iPhone.xib */; };
 		81D21F8916FAD2E70090A652 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81D21F8716FAD2E70090A652 /* ViewController_iPad.xib */; };
@@ -68,14 +67,23 @@
 		AA272BDC16FEA18B0095B53F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA272BDB16FEA18B0095B53F /* Localizable.strings */; };
 		AA272BE316FEBF790095B53F /* green_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272BE116FEBF790095B53F /* green_marker.png */; };
 		AA272BE416FEBF790095B53F /* green_marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272BE216FEBF790095B53F /* green_marker@2x.png */; };
-		AA272BEA16FEC9780095B53F /* airportpowericon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272BE916FEC9780095B53F /* airportpowericon@2x.png */; };
-		AA272BEC16FEC9860095B53F /* airportpowericon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272BEB16FEC9860095B53F /* airportpowericon.png */; };
-		AA272BEE16FECD730095B53F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272BED16FECD730095B53F /* Default.png */; };
-		AA272BF016FECDFE0095B53F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272BEF16FECDFE0095B53F /* Default@2x.png */; };
 		AA272BF2170139010095B53F /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA272BF1170139010095B53F /* BugSense-iOS.framework */; };
 		AA272BF617013DAE0095B53F /* AirportPower.m in Sources */ = {isa = PBXBuildFile; fileRef = AA272BF517013DAE0095B53F /* AirportPower.m */; };
 		AA272BFA17014B840095B53F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AA272BF917014B840095B53F /* Reachability.m */; };
 		AA272BFC170297C00095B53F /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA272BFB170297C00095B53F /* Twitter.framework */; };
+		AA272C0A1702A2EB0095B53F /* airportpowericon_iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272C091702A2EB0095B53F /* airportpowericon_iPhone@2x.png */; };
+		AA272C101702A3280095B53F /* airportpowericon_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272C0B1702A3230095B53F /* airportpowericon_iPad.png */; };
+		AA272C111702A3280095B53F /* airportpowericon_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272C0C1702A3230095B53F /* airportpowericon_iPad@2x.png */; };
+		AA272C131702A3280095B53F /* airportpowerlogo_store.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272C0E1702A3250095B53F /* airportpowerlogo_store.png */; };
+		AA272C141702A3280095B53F /* airportpowerlogo_store@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272C0F1702A3270095B53F /* airportpowerlogo_store@2x.png */; };
+		AA272C161702A3770095B53F /* airportpowericon_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272C151702A3770095B53F /* airportpowericon_iPhone.png */; };
+		AA272C201702AAFB0095B53F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272C1F1702AAFB0095B53F /* Default.png */; };
+		AA272C221702AB010095B53F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272C211702AB010095B53F /* Default@2x.png */; };
+		AA272C251702ACDC0095B53F /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272C241702ACDC0095B53F /* Default-Portrait~ipad.png */; };
+		AA272C271702AE6D0095B53F /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272C261702AE6D0095B53F /* Default-Landscape~ipad.png */; };
+		AA272C291702AE750095B53F /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272C281702AE750095B53F /* Default-Portrait@2x~ipad.png */; };
+		AA272C2B1702AE7B0095B53F /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272C2A1702AE7B0095B53F /* Default-Landscape@2x~ipad.png */; };
+		AA272C2D1702AE980095B53F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA272C2C1702AE980095B53F /* Default-568h@2x.png */; };
 		AA2F848816FD71A500CE62D6 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2F848616FD71A500CE62D6 /* 74-location.png */; };
 		AA2F848916FD71A500CE62D6 /* 74-location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2F848716FD71A500CE62D6 /* 74-location@2x.png */; };
 		AA2F848C16FD734200CE62D6 /* 51-outlet.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2F848A16FD734200CE62D6 /* 51-outlet.png */; };
@@ -166,7 +174,6 @@
 		81D21F7716FAD2E70090A652 /* Airport Power-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Airport Power-Prefix.pch"; sourceTree = "<group>"; };
 		81D21F7816FAD2E70090A652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		81D21F7916FAD2E70090A652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		81D21F7F16FAD2E70090A652 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		81D21F8116FAD2E70090A652 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		81D21F8216FAD2E70090A652 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		81D21F8516FAD2E70090A652 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -188,16 +195,25 @@
 		AA272BDB16FEA18B0095B53F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		AA272BE116FEBF790095B53F /* green_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_marker.png; sourceTree = "<group>"; };
 		AA272BE216FEBF790095B53F /* green_marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green_marker@2x.png"; sourceTree = "<group>"; };
-		AA272BE916FEC9780095B53F /* airportpowericon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "airportpowericon@2x.png"; path = "../airportpowericon@2x.png"; sourceTree = "<group>"; };
-		AA272BEB16FEC9860095B53F /* airportpowericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = airportpowericon.png; path = ../airportpowericon.png; sourceTree = "<group>"; };
-		AA272BED16FECD730095B53F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		AA272BEF16FECDFE0095B53F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AA272BF1170139010095B53F /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "BugSense-iOS.framework"; sourceTree = "<group>"; };
 		AA272BF417013BF60095B53F /* AirportPower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirportPower.h; sourceTree = "<group>"; };
 		AA272BF517013DAE0095B53F /* AirportPower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirportPower.m; sourceTree = "<group>"; };
 		AA272BF817014B840095B53F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		AA272BF917014B840095B53F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		AA272BFB170297C00095B53F /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		AA272C091702A2EB0095B53F /* airportpowericon_iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airportpowericon_iPhone@2x.png"; sourceTree = "<group>"; };
+		AA272C0B1702A3230095B53F /* airportpowericon_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airportpowericon_iPad.png; sourceTree = "<group>"; };
+		AA272C0C1702A3230095B53F /* airportpowericon_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airportpowericon_iPad@2x.png"; sourceTree = "<group>"; };
+		AA272C0E1702A3250095B53F /* airportpowerlogo_store.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airportpowerlogo_store.png; sourceTree = "<group>"; };
+		AA272C0F1702A3270095B53F /* airportpowerlogo_store@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airportpowerlogo_store@2x.png"; sourceTree = "<group>"; };
+		AA272C151702A3770095B53F /* airportpowericon_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airportpowericon_iPhone.png; sourceTree = "<group>"; };
+		AA272C1F1702AAFB0095B53F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AA272C211702AB010095B53F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		AA272C241702ACDC0095B53F /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		AA272C261702AE6D0095B53F /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		AA272C281702AE750095B53F /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		AA272C2A1702AE7B0095B53F /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		AA272C2C1702AE980095B53F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AA2F848616FD71A500CE62D6 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
 		AA2F848716FD71A500CE62D6 /* 74-location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location@2x.png"; sourceTree = "<group>"; };
 		AA2F848A16FD734200CE62D6 /* 51-outlet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "51-outlet.png"; sourceTree = "<group>"; };
@@ -344,6 +360,19 @@
 		81D21F5A16FAD2E70090A652 = {
 			isa = PBXGroup;
 			children = (
+				AA272C2C1702AE980095B53F /* Default-568h@2x.png */,
+				AA272C2A1702AE7B0095B53F /* Default-Landscape@2x~ipad.png */,
+				AA272C281702AE750095B53F /* Default-Portrait@2x~ipad.png */,
+				AA272C261702AE6D0095B53F /* Default-Landscape~ipad.png */,
+				AA272C241702ACDC0095B53F /* Default-Portrait~ipad.png */,
+				AA272C211702AB010095B53F /* Default@2x.png */,
+				AA272C1F1702AAFB0095B53F /* Default.png */,
+				AA272C151702A3770095B53F /* airportpowericon_iPhone.png */,
+				AA272C091702A2EB0095B53F /* airportpowericon_iPhone@2x.png */,
+				AA272C0B1702A3230095B53F /* airportpowericon_iPad.png */,
+				AA272C0C1702A3230095B53F /* airportpowericon_iPad@2x.png */,
+				AA272C0E1702A3250095B53F /* airportpowerlogo_store.png */,
+				AA272C0F1702A3270095B53F /* airportpowerlogo_store@2x.png */,
 				AA272BFB170297C00095B53F /* Twitter.framework */,
 				81C6280516FD1A9E0023260F /* MagicalRecord */,
 				AA272BF717014B840095B53F /* Reachability */,
@@ -425,8 +454,6 @@
 		81D21F7016FAD2E70090A652 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AA272BEB16FEC9860095B53F /* airportpowericon.png */,
-				AA272BE916FEC9780095B53F /* airportpowericon@2x.png */,
 				AA272BE116FEBF790095B53F /* green_marker.png */,
 				AA272BE216FEBF790095B53F /* green_marker@2x.png */,
 				AA2F848A16FD734200CE62D6 /* 51-outlet.png */,
@@ -437,9 +464,6 @@
 				81D21F7216FAD2E70090A652 /* InfoPlist.strings */,
 				81D21F7516FAD2E70090A652 /* main.m */,
 				81D21F7716FAD2E70090A652 /* Airport Power-Prefix.pch */,
-				AA272BED16FECD730095B53F /* Default.png */,
-				AA272BEF16FECDFE0095B53F /* Default@2x.png */,
-				81D21F7F16FAD2E70090A652 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -505,7 +529,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				81D21F7416FAD2E70090A652 /* InfoPlist.strings in Resources */,
-				81D21F8016FAD2E70090A652 /* Default-568h@2x.png in Resources */,
 				81D21F8616FAD2E70090A652 /* ViewController_iPhone.xib in Resources */,
 				81D21F8916FAD2E70090A652 /* ViewController_iPad.xib in Resources */,
 				81D21F9216FAD33E0090A652 /* GoogleMaps.bundle in Resources */,
@@ -517,10 +540,19 @@
 				AA272BDC16FEA18B0095B53F /* Localizable.strings in Resources */,
 				AA272BE316FEBF790095B53F /* green_marker.png in Resources */,
 				AA272BE416FEBF790095B53F /* green_marker@2x.png in Resources */,
-				AA272BEA16FEC9780095B53F /* airportpowericon@2x.png in Resources */,
-				AA272BEC16FEC9860095B53F /* airportpowericon.png in Resources */,
-				AA272BEE16FECD730095B53F /* Default.png in Resources */,
-				AA272BF016FECDFE0095B53F /* Default@2x.png in Resources */,
+				AA272C0A1702A2EB0095B53F /* airportpowericon_iPhone@2x.png in Resources */,
+				AA272C101702A3280095B53F /* airportpowericon_iPad.png in Resources */,
+				AA272C111702A3280095B53F /* airportpowericon_iPad@2x.png in Resources */,
+				AA272C131702A3280095B53F /* airportpowerlogo_store.png in Resources */,
+				AA272C141702A3280095B53F /* airportpowerlogo_store@2x.png in Resources */,
+				AA272C161702A3770095B53F /* airportpowericon_iPhone.png in Resources */,
+				AA272C201702AAFB0095B53F /* Default.png in Resources */,
+				AA272C221702AB010095B53F /* Default@2x.png in Resources */,
+				AA272C251702ACDC0095B53F /* Default-Portrait~ipad.png in Resources */,
+				AA272C271702AE6D0095B53F /* Default-Landscape~ipad.png in Resources */,
+				AA272C291702AE750095B53F /* Default-Portrait@2x~ipad.png in Resources */,
+				AA272C2B1702AE7B0095B53F /* Default-Landscape@2x~ipad.png in Resources */,
+				AA272C2D1702AE980095B53F /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
