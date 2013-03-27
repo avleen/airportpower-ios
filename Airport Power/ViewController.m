@@ -6,14 +6,15 @@
 //  Copyright (c) 2013 WraithNet. All rights reserved.
 //
 
-#import "AirportPower.h"
-
-#import "ViewController.h"
-
 #import <BugSense-iOS/BugSenseController.h>
-#import "Reachability.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import <Twitter/Twitter.h>
+#import "Reachability.h"
+
+#import "AirportPower.h"
+#import "ViewController.h"
 #import "KVStore.h"
+
 
 @interface ViewController ()
 
@@ -37,7 +38,6 @@
  */
 
 @implementation ViewController {
-//    NSInteger zoomedOnce;
     KVStore *persistentData;
 }
 
@@ -71,8 +71,7 @@ const NSString *actionNewLocation = @"newLocation";
     // Initial welcome message
     [self welcomeMessage];
     
-    [bannerView setAdSize:kGADAdSizeBanner];
-    [bannerView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [bannerView setAdSize:kGADAdSizeSmartBannerPortrait];
 
     bannerView.adUnitID = GOOGLE_AD_UNITID;
     bannerView.rootViewController = self;
@@ -109,7 +108,7 @@ const NSString *actionNewLocation = @"newLocation";
         return;
     }
     
-    [self makePopup:NSLocalizedString(@"welcome_message", nil)];
+    [self makePopup:NSLocalizedString(@"welcome_message", nil) withTweet:YES];
         
     persistentData.welcomeSeen = [NSNumber numberWithInt:1];
     [[NSManagedObjectContext defaultContext] MR_saveOnlySelfAndWait];
@@ -223,28 +222,48 @@ const NSString *actionNewLocation = @"newLocation";
     return YES;
 }
 
+
 - (void)makePopup:(NSString *)message {
+    [self makePopup:message withTweet:NO];
+}
+
+- (void)makePopup:(NSString *)message withTweet:(BOOL)tweetButton {
+    
+
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString(@"app_name", nil)
                                                     message: message
                                                    delegate: self
                                           cancelButtonTitle: NSLocalizedString(@"ok", nil)
-                                          otherButtonTitles:nil];
+                                          otherButtonTitles: nil];
+    if (tweetButton) {
+        [alert addButtonWithTitle:NSLocalizedString(@"tweet_this", nil)];
+    }
+    
     [alert show];
     return;
 
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSString *title = [actionSheet buttonTitleAtIndex:buttonIndex];
-    CLLocationDegrees lng = currentLocation.coordinate.longitude;
-    CLLocationDegrees lat = currentLocation.coordinate.latitude;
-    float accuracy = currentLocation.horizontalAccuracy;
-    NSLog(@" Lng, Lat, Accuracy: %f, %f, %f", lng, lat, accuracy);
-    NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"com.silverwraith.Airport-Power.uuid"];
+
     NSString *score;
     NSString *url;
     NSString *popupMsg;
     const NSString *action;
+
+    // Nothing pushed, seeya
+    if (buttonIndex < 0) {
+        return;
+    }
+    
+    CLLocationDegrees lng = currentLocation.coordinate.longitude;
+    CLLocationDegrees lat = currentLocation.coordinate.latitude;
+    float accuracy = currentLocation.horizontalAccuracy;
+    NSLog(@" Lng, Lat, Accuracy: %f, %f, %f", lng, lat, accuracy);
+
+    NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"com.silverwraith.Airport-Power.uuid"];
+
+    NSString *title = [actionSheet buttonTitleAtIndex:buttonIndex];
 
     if([title isEqualToString:NSLocalizedString(@"cancel", nil)]) {
         return;
@@ -296,15 +315,23 @@ const NSString *actionNewLocation = @"newLocation";
     UIActionSheet *actionSheet = [[UIActionSheet alloc]
                                   initWithTitle:NSLocalizedString(@"submit_title", nil)
                                   delegate:self
-                                  cancelButtonTitle:NSLocalizedString(@"submit_no", nil)
+                                  cancelButtonTitle: nil
                                   destructiveButtonTitle: nil
-                                  otherButtonTitles: NSLocalizedString(@"submit_yes", nil), nil];
-        
+                                  otherButtonTitles: NSLocalizedString(@"submit_no", nil), NSLocalizedString(@"submit_yes", nil), nil];
+    
     [actionSheet showInView:self.view];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    //NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    if([title isEqualToString:NSLocalizedString(@"cancel", nil)]) {
+        return;
+    } else if ([title isEqualToString:NSLocalizedString(@"ok", nil)]) {
+        return;
+    } else if ([title isEqualToString:NSLocalizedString(@"tweet_this", nil)]) {
+        [self sendTweet];
+    }
+    
 }
 
 - (IBAction) zoomToMyLocation:(id)sender {
@@ -344,9 +371,19 @@ const NSString *actionNewLocation = @"newLocation";
     }
 }
 
+- (void)sendTweet {
+    
+    TWTweetComposeViewController *twitter = [[TWTweetComposeViewController alloc] init];
+    
+    [twitter setInitialText:NSLocalizedString(@"sample_tweet", nil)];
+    [self presentViewController:twitter animated:YES completion:nil];
+}
+
 - (void)viewDidUnload {
     toolbar = nil;
     mapView = nil;
+    bannerView = nil;
+    
     [self setSubmitButton:nil];
     [self setMyLocationButton:nil];
     [super viewDidUnload];

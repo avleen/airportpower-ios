@@ -17,7 +17,6 @@
 
 @implementation AppDelegate
 
-static BOOL appserverReachable = NO;
 Reachability *reach = nil;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

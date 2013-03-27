@@ -8,6 +8,7 @@
 
 "cancel" = "Cancel";
 "ok" = "Ok!";
+"tweet_this" = "Tweet This!";
 
 
 "app_name" = "Airport Power";
@@ -26,7 +27,7 @@ menu key, followed by the Submit Power Location button.
 You'll help other people find power, and their submissions will help you in return!
 
 Tap \"Tweet This\" to let others know about this app!";
-
+"sample_tweet" = "I installed the Airport Power app to help locate every power outlet in every airport in the world. Come help us!";
 
 "still_here" = "Is this power location still here?";
 "power_gone" = "Nope, it's gone.";
@@ -38,7 +39,7 @@ Tap \"Tweet This\" to let others know about this app!";
 "thanks" = "Thank you! Your submission will be published shortly.";
 
 
-"submit_title" = "Really submit a new power outlet at your location?";
+"submit_title" = "Is there a power outlet at your current location?";
 "submit_yes" = "Yes! There's power here!";
 "submit_no" = "No, no power here";
 
